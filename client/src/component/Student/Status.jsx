@@ -11,8 +11,8 @@ const Status = () => {
           'Authorization': localStorage.getItem("token"),
           'Content-Type': 'application/json',
         };
-        const data = await axios.get('http://localhost:5000/student/status',{headers});
-        console.log(data.data.data[0])
+        const data = await axios.get('https://easyexit-backend.onrender.com/student/status',{headers});
+        // console.log(data.data.data)
         setPass(data.data.data[0]);
       } catch (error) {
         console.error('Error fetching accepted passes:', error);

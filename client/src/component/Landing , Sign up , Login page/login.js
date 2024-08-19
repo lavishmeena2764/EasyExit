@@ -36,11 +36,10 @@ const LoginSignup = () => {
                     role:role,
                     name:name
                 };
-                const url = "http://localhost:5000/signup";
+                const url = "https://easyexit-backend.onrender.com/signup";
                 const response = await axios.post(url, body);
                 console.log(response)
                 if (response.data.status!="Inserted") {
-                    alert("Internal Error : Failed to signup!!")
                     throw new Error('Failed to signup');
                 }
                 const data = response.data.data;
@@ -51,7 +50,6 @@ const LoginSignup = () => {
 
         } catch (error) {
             console.error('Error:', error);
-            alert(error);
         }
     }
     async function handleLogin() {
@@ -63,19 +61,23 @@ const LoginSignup = () => {
                 password:pass,
                 role:role
             };
-            const url = "http://localhost:5000/login";
+            console.log(body)
+            const url = "https://easyexit-backend.onrender.com/login";
+            console.log(url)
             const response = await axios.post(url, body);
+            console.log("fetched")
+            console.log(response)
             if (response.data.status!="OK") {
-                alert("Internal Error : Failed to login!!")
                 throw new Error('Failed to login');
             }
             const data = response.data.data;
+            
+            console.log(data)
             localStorage.setItem('token', "Bearer " + data.secret);
 
             navigate("/" + data.role)
 
         } catch (error) {
-            alert(error.response?error.response.data.error: error);
             console.error('Error:', error);
         }
     }

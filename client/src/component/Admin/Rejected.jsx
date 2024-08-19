@@ -13,7 +13,7 @@ const Rejected = () => {
           'Authorization': localStorage.getItem("token"),
           'Content-Type': 'application/json',
         };
-        const data = await axios.get('http://localhost:5000/admin/rejected',{headers});
+        const data = await axios.get('https://easyexit-backend.onrender.com/admin/rejected',{headers});
         setPendingPasses(data.data.data);
       } catch (error) {
         console.error('Error fetching accepted passes:', error);

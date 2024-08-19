@@ -21,15 +21,21 @@ const OTPverify = () => {
         otp : otp,
         roll : roll,
       };
-      const data = await axios.post('http://localhost:5000/guard',body,{headers});
+      const data = await axios.post('https://easyexit-backend.onrender.com/guard',body,{headers});
       
       if(data.status === 401) return(<>Request is Unauthorized</>);
       // if (!response.ok) {
       //   throw new Error('Failed to find outpass');
       // }
       // console.log('Outpass found!!');
-      localStorage.setItem("pass", JSON.stringify(data.data.data));
+      if(!data.data.data){
+        alert("Invalid OTP!!");
+        window.location.reload();
+      }
+      else{
+        localStorage.setItem("pass", JSON.stringify(data.data.data));
       navigate('/guard/accept');
+      }
       // Optionally, you can reset the form fields here
       setOTP();
     } catch (error) {

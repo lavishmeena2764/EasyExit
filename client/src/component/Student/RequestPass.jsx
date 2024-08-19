@@ -32,9 +32,9 @@ const RequestPass = () => {
         'Content-Type': 'application/json',
       };
       // console.log(JSON.stringify(formData))
-      const response = await axios.post('http://localhost:5000/student', formData, {headers});
-      console.log('Form submitted successfully');
-      console.log(response)
+      const response = await axios.post('https://easyexit-backend.onrender.com/student', formData, {headers});
+      alert("Request Sent Successfully!!")
+      window.location.reload();
     } catch (error) {
       console.error('Error submitting form:', error);
     }
