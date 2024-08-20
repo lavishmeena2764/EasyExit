@@ -12,7 +12,7 @@ const Accepted = () => {
           'Authorization': localStorage.getItem("token"),
           'Content-Type': 'application/json',
         };
-        const data = await axios.get("https://easyexit-backend.onrender.com/admin/accepted",{headers});
+        const data = await axios.get("https://easyexit-backend.vercel.app/admin/accepted",{headers});
         setPendingPasses(data.data.data);
         console.log(pendingPasses)
       } catch (error) {

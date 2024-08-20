@@ -21,7 +21,7 @@ const OTPverify = () => {
         otp : otp,
         roll : roll,
       };
-      const data = await axios.post('https://easyexit-backend.onrender.com/guard',body,{headers});
+      const data = await axios.post('https://easyexit-backend.vercel.app/guard',body,{headers});
       
       if(data.status === 401) return(<>Request is Unauthorized</>);
       // if (!response.ok) {

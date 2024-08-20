@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
     cors({
-        origin: "http://localhost:3000"
+        origin: "https://easyexit.vercel.app/"
     }));
 
 import connDB from './src/config/db.config.js';

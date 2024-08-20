@@ -13,7 +13,7 @@ const Verified = () => {
           'Authorization': localStorage.getItem("token"),
           'Content-Type': 'application/json',
         };
-        const data = await axios.get('https://easyexit-backend.onrender.com/guard/verified',{headers});
+        const data = await axios.get('https://easyexit-backend.vercel.app/guard/verified',{headers});
         console.log(data)
         setPastPasses(data.data.data);
       } catch (error) {
