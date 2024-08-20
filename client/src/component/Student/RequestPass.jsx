@@ -32,7 +32,7 @@ const RequestPass = () => {
         'Content-Type': 'application/json',
       };
       // console.log(JSON.stringify(formData))
-      const response = await axios.post('https://easyexit-backend.vercel.app/student', formData, {headers});
+      const response = await axios.post('https://easyexit-backend.render.com/student', formData, {headers});
       alert("Request Sent Successfully!!")
       window.location.reload();
     } catch (error) {

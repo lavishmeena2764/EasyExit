@@ -36,7 +36,7 @@ const LoginSignup = () => {
                     role:role,
                     name:name
                 };
-                const url = "https://easyexit-backend.vercel.app/signup";
+                const url = "https://easyexit-backend.render.com/signup";
                 const response = await axios.post(url, body);
                 console.log(response)
                 if (response.data.status!="Inserted") {
@@ -62,7 +62,7 @@ const LoginSignup = () => {
                 role:role
             };
             console.log(body)
-            const url = "https://easyexit-backend.vercel.app/login";
+            const url = "https://easyexit-backend.render.com/login";
             console.log(url)
             const response = await axios.post(url, body);
             console.log("fetched")

@@ -16,7 +16,7 @@ const PendingPassesSlider = () => {
           'Authorization': localStorage.getItem("token"),
           'Content-Type': 'application/json',
         };
-        const data = await axios.get('https://easyexit-backend.vercel.app/admin',{headers});
+        const data = await axios.get('https://easyexit-backend.render.com/admin',{headers});
         setPendingPasses(data.data.data);
         // console.log(data.data.data)
       } catch (error) {
@@ -38,7 +38,7 @@ const PendingPassesSlider = () => {
           status : true,
           id : id
         }
-        const data = await axios.post('https://easyexit-backend.vercel.app/admin',body,{headers});
+        const data = await axios.post('https://easyexit-backend.render.com/admin',body,{headers});
         console.log(data)
         
     window.location.reload();
@@ -66,7 +66,7 @@ const PendingPassesSlider = () => {
           id : id,
           reason : reason
         };
-        const data = await axios.post('https://easyexit-backend.vercel.app/admin',body,{headers});
+        const data = await axios.post('https://easyexit-backend.render.com/admin',body,{headers});
         
     window.location.reload();
       } catch (error) {
