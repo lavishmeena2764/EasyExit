@@ -11,7 +11,7 @@ const Status = () => {
           'Authorization': localStorage.getItem("token"),
           'Content-Type': 'application/json',
         };
-        const data = await axios.get('https://easyexit-backend.render.com/student/status',{headers});
+        const data = await axios.get('https://easyexit-backend.onrender.com/student/status',{headers});
         // console.log(data.data.data)
         setPass(data.data.data[0]);
       } catch (error) {

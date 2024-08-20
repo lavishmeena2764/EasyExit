@@ -17,7 +17,7 @@ const AcceptPage = () => {
           const body = {
             id:pass._id
           }
-          const data = await axios.patch('https://easyexit-backend.render.com/guard/accept',body,{headers});
+          const data = await axios.patch('https://easyexit-backend.onrender.com/guard/accept',body,{headers});
           console.log(data)
           navigate("/guard/verified");
         } catch (error) {
